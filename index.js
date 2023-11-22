@@ -1,7 +1,8 @@
 const express = require('express')
 const server = express();
 const morgan = require('morgan')
-const cors = require('cors')
+const cors = require('cors');
+const mainRouter = require('./routes/index')
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -21,6 +22,7 @@ dbConnection()
 server.use(morgan('dev'))
 server.use(express.json())
 server.use(cors())
+server.use(mainRouter)
 
 const puerto = process.env.port || 5000
 
