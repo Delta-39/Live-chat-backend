@@ -23,7 +23,6 @@ const registerController = async (data) =>{
         })
         
         const result = await newUser.save()
-        console.log(result)
     } catch (error) {
         console.log(error)
     }
